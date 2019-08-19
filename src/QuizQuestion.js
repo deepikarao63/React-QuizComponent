@@ -10,7 +10,7 @@ render()
         </section>
         <section className="buttons">
           <ul>
-           {this.props.quiz_question.answer_options[0]}
+           <li>{this.props.quiz_question.answer_options[0]}</li>
           </ul>
         </section>
       </main>
