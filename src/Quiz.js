@@ -10,6 +10,7 @@ constructor(props)
 super(props)
 this.state={quiz_position:1}
 }
+showNextQuestion()
 render()
 {
     const isQuizEnd=((this.state.quiz_position-1)===
@@ -17,7 +18,8 @@ render()
     return(
         <div>
             {isQuizEnd?<QuizEnd/>:
-            <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position-1]}/>}
+            <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position-1]} 
+            clickHandler={this.showNextQuestion.bind(this)}/>}
             </div>
     )
 }
