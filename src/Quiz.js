@@ -11,6 +11,11 @@ super(props)
 this.state={quiz_position:1}
 }
 showNextQuestion()
+{
+    this.setState((state)=>{
+        return {quiz_position:this.state.quiz_position+1}
+    })
+}
 render()
 {
     const isQuizEnd=((this.state.quiz_position-1)===
@@ -19,7 +24,7 @@ render()
         <div>
             {isQuizEnd?<QuizEnd/>:
             <QuizQuestion quiz_question={quizData.quiz_questions[this.state.quiz_position-1]} 
-            clickHandler={this.showNextQuestion.bind(this)}/>}
+            showNextQuestionHandler={this.showNextQuestion.bind(this)}/>}
             </div>
     )
 }
